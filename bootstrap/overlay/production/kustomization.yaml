@@ -1,0 +1,58 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../../bases/namespaces
+- ../../bases/argocd
+
+patchesStrategicMerge:
+  - argocd-cm.patch.yaml
+  - argocd-rbac-cm.patch.yaml
+
+patches:
+- patch: |-
+    - op: replace
+      path: /spec/generators/0/git/directories/0
+      value:
+        path: addons/**/production
+    - op: replace
+      path: /spec/generators/0/git/directories/2
+      value:
+        path: databases/**/production
+  target:
+    kind: ApplicationSet
+    name: general
+- patch: |-
+    - op: replace
+      path: /spec/rules/0/host
+      value: 'argocd.lucassilvano.com.br'
+  target:
+    kind: Ingress
+    name: argocd
+- patch: |-
+    - op: replace
+      path: /spec/source/path
+      value: bootstrap/overlay/production
+  target:
+    kind: Application
+    name: argocd
+- patch: |-
+    - op: replace
+      path: /spec/egress/1/ports/0/port
+      value: 53
+    - op: replace
+      path: /spec/egress/1/ports/1/port
+      value: 53
+  target:
+    kind: NetworkPolicy
+    name: argocd-redis-ha-proxy-network-policy
+- patch: |-
+    - op: replace
+      path: /spec/egress/1/ports/0/port
+      value: 53
+    - op: replace
+      path: /spec/egress/1/ports/1/port
+      value: 53
+  target:
+    kind: NetworkPolicy
+    name: argocd-redis-ha-server-network-policy

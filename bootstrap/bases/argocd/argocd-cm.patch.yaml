@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+data:
+  # For KSOPs versions < v2.5.0, use the old kustomize flag style
+  kustomize.buildOptions: "--enable-alpha-plugins --enable-exec"
+  # Disable Admin user
+  # admin.enabled: "false"

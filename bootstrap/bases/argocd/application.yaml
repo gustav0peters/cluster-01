@@ -4,7 +4,7 @@ metadata:
   name: argocd
 spec:
   source:
-    repoURL: https://github.com/lucasilvano1/lucas-cluster.git
+    repoURL: https://github.com/gustav0peters/cluster-01.git
     targetRevision: HEAD
     path: 'change-me'
   destination:

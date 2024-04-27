@@ -6,7 +6,7 @@ spec:
   # generator should be defined under overlay
   generators:
     - git:
-        repoURL: https://github.com/lucasilvano1/lucas-cluster.git
+        repoURL: https://github.com/gustav0peters/cluster-01.git
         revision: HEAD
         directories:
           - path: "change-me"
@@ -24,7 +24,7 @@ spec:
         - CreateNamespace=true
       project: "{{path[0]}}"
       source:
-        repoURL: https://github.com/lucasilvano1/lucas-cluster.git
+        repoURL: https://github.com/gustav0peters/cluster-01.git
         targetRevision: HEAD
         path: "{{path[0]}}/{{path[1]}}"
         helm:

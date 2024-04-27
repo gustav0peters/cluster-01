@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: argocd-github-creds
+    namespace: argocd
+    labels:
+        argocd.argoproj.io/secret-type: repo-creds
+stringData:
+    type: git
+    url: https://github.com/gustav0peters
+    githubAppID: "886068"
+    githubAppInstallationID: "50097308"
+    githubAppPrivateKey: |-
+        -----BEGIN RSA PRIVATE KEY-----
+        MIIEpAIBAAKCAQEAu35EButUCgLKt054bN4KnG+t1KfJ0JypKgUi1t5bNXzhdq1+
+        nxyC9qjQukceXgKylEl4NnNaHXjf7pb2PQ+GNg546XY3SJ6pUra7N2Mn/0LBGSAW
+        BFmqHKv+am3QkNuMsbMTJmgJ6z6se+FfqMt5rItDGj+1ajztTZplTBddaLUdfsZj
+        kebKcC9NGWc/2UqjuJeUY8hGM3PPr+cnD+uVCp3jJq4Tj7c17knhcAXnejl/K2Iy
+        ueNQVEED7SpgLE8uyYqEIMsBssTZj66s2FZlLlN035loTdYa27YGv55Fx40OB1Ss
+        rjNMrJFQUr37C4WG3WRANArhx9lyyvjlP+yyMwIDAQABAoIBAGgOR4rfiCCWNBNP
+        xZ4GDTWM9ZiUFnlkuK3Nc+x0M4KX8DmBSEjd9gEW5+C6H6xlKt8Jd2Ig2t6Iex9b
+        QQXaW84cchZ/uWbgR3DUYUr4CPauAaUEHbQEX1jSS7ydfacncgodLH+gNgENI4UN
+        K53ub3THRVKIERMJBVqQWa/FN94n0xzD2x8fuz7wDf2Jdjv7YpYE6g7YZLlJ7CX0
+        XkeaNwgboyuURmJr11rNgA9kM7JEc3IJJpIxFbh6k1HtlKhpyMsB3yEMdRFUrEjW
+        ZtxM7NpBYRVhWJFjjOLaDh56uBIrKw5ceoNBvtnLYSWCrRqDeuJTtw4gWEN21NNH
+        cvnAZuECgYEA4A1S6bhRqzlvFaARBEEPZmOV98Bi1XSfwDO8rqfWQ+5Dc3eelnzZ
+        Ohx22gzY1GMEPJ7CVg0VhgTDq6sFVbd/EElQcD9EgFr8ZCS9iXM9WwBUIAKW8Tbj
+        Nh8MnZT8aoK3CPdAKLYXrOGvyLx7D2PM6FqiMKPb6CEWwnsg3PyCSoUCgYEA1jpr
+        DxIfc6CkJB8NZrc3j8F1CnBO+hg5r0HUAlvq3vXDn3dDnXWdMJ31ozX84dUv3t5L
+        LAQqq1vY0SVkwyEfnb/Oko0fwhVbS8vT1SMit2oBR1u9XNwFy/HoU7zpfUIN3iTV
+        IsHFEL9oI5uHAWjSdEvBhCJN9JXKUPgdlXHfk1cCgYB/d3UVXPSxqjJFplQoDG+b
+        e8qlMgHImNoN+iE9aGUhLpuXRJWn3g2j3u/LLAXsBw0xA81iMX1uSqWbs+eMFaIn
+        fN5TjdsF/z2aJ8DhQvvEGxLBR1fikayAbPe7aziTzBwf8LLCtp4PkDJ2zKxiXBAG
+        nRGrBH4muTR+nphawRnLFQKBgQDOlsdnYTKzbtbbfpaN12HdX9Jenq+KvpHiULkD
+        DWESYi6kOX8a+bD8kVewbP/RSKVBZ11WtS3w0kHkbwscoXS7y5yJ904I/E9uaMF/
+        aMKx3ageCHo0cnmkk0RYfHUuNeTptNtVCUfhPrROok0vLsbFH8keg3Zpx4mzS5I7
+        6/SPQQKBgQC0qmGBw9ATQqKwTAQVa8T0ojx4tQbKPoKYGAbJdFkov3FbWnjmkbpZ
+        e68Rit2XL5vFSkLHM89QTc3G04DIrvJMX0/t/jzDoDk8qPBNUAj2VWpqa9Q1LvFS
+        iBs+Yrfd7PjF8M9nEVrRnDp0YFh93tK4WmKBQwV4vpL+XcIg69SxEQ==
+        -----END RSA PRIVATE KEY-----

@@ -9,30 +9,28 @@ spec:
         repoURL: https://github.com/gustav0peters/cluster-01.git
         revision: HEAD
         directories:
-          - path: "change-me"
-          - path: "change-me"
-          - path: "change-me"
+          - path: 'change-me'
+          - path: 'change-me'
+          - path: 'change-me'
+          - path: 'change-me'
   template:
     metadata:
-      name: "{{path[1]}}"
+      name: '{{path[1]}}'
     spec:
       syncPolicy:
         automated:
           selfHeal: false
-        syncOptions:
-        - ServerSideApply=true
-        - CreateNamespace=true
-      project: "{{path[0]}}"
+      project: '{{path[0]}}'
       source:
         repoURL: https://github.com/gustav0peters/cluster-01.git
         targetRevision: HEAD
-        path: "{{path[0]}}/{{path[1]}}"
+        path: '{{path}}'
         helm:
-          releaseName: "{{path[1]}}"
+          releaseName: '{{path[1]}}'
           valueFiles:
-            - "/{{path[0]}}/{{path[1]}}/values.yaml"
-            - "/{{path}}/values.yaml"
-            - "/{{path}}/secrets.yaml"
+            - '/{{path[0]}}/{{path[1]}}/values.yaml'
+            - '/{{path}}/values.yaml'
+            - '/{{path}}/secrets.yaml'
       destination:
         server: https://kubernetes.default.svc
-        namespace: "{{path[0]}}"
+        namespace: '{{path[0]}}'

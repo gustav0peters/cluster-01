@@ -1,9 +1,10 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: fmv3-deployments
+  name: fmv3-helm-charts
   labels:
     argocd.argoproj.io/secret-type: repository
 stringData:
-  type: git
-  url: https://github.com/gustav0peters/cluster-01.git
+  type: helm
+  url: gcr.io
+  enableOCI: "true"

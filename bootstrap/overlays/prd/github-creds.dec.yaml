@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: argocd-github-creds
+    namespace: argocd
+    labels:
+        argocd.argoproj.io/secret-type: repository
+stringData:
+    type: git
+    url: git@github.com:gustav0peters/cluster-01.git
+    sshPrivateKey: |
+        -----BEGIN OPENSSH PRIVATE KEY-----
+        b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+        QyNTUxOQAAACAw8/Erc7m8WNgjUjVcBYGDuw6cA9WsOIMJvN+Utf/wpQAAAJhMjsRbTI7E
+        WwAAAAtzc2gtZWQyNTUxOQAAACAw8/Erc7m8WNgjUjVcBYGDuw6cA9WsOIMJvN+Utf/wpQ
+        AAAEB9KQfOgvfAdJ2tmfkvzQGYoKEY29aS21U27e0HXJv/BDDz8StzubxY2CNSNVwFgYO7
+        DpwD1aw4gwm835S1//ClAAAADkdJVEhVQi1DT05ORUNUAQIDBAUGBw==
+        -----END OPENSSH PRIVATE KEY-----

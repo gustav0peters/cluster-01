@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: argocd-github-creds
+    namespace: argocd
+    labels:
+        argocd.argoproj.io/secret-type: repository
+stringData:
+    type: ENC[AES256_GCM,data:QYmw,iv:o8zOOam3f4adSgJtDNbrsVcqG2VmjVbZDIs+J/Hbwl8=,tag:qMZ62U/8PRBF5FpamESFEw==,type:str]
+    url: ENC[AES256_GCM,data:hzFk+73vAACLJc2HYVC7QeMCQCMk9J/69n1fDr/4xa60OEX3clG6212mHA==,iv:kLaAGTrxgf3IHbZiyfMs3j7433LjC4A5CSu7AzuZwCo=,tag:VHDCq1SvwXTOqxlfYF2fiQ==,type:str]
+    sshPrivateKey: ENC[AES256_GCM,data:kvfptEonRUkSxpbXvqkeJ1t9hZnuWiocLv5Ht2bI7ffKmIm3Fqi2HByGy0MBkN0YO21md0UPjm/Gk9M9SzmIKC215LEVWMyJVT1h2ezdJo8hqcUkh6uQvV3fzUVZCOlJEh6yWOKRpWh3E79lSJVIJ+pufYsWxQ6eZfoKI5D5HZpM5ms6OT66HGv+fT8XWQ51YHkKallqos3JILay0eZ74GJeZ2+M4Hd5Tjo5nKSZcJATWu2mPnXLTM8rFWTqThJ0ofWosw8Me1vuLLhk4i1AGFTCRnjAZD+BxuwYAQx/76aMckJr6WQA3On/FITw08SkT9DCllz2tvSBQDnSwlJfZW/Dmfr2NeIQEAo6ppqUlnIML83HCmhHuqcr1sE/QzX16Bj1Lm4D2NYgceon18Veac5ui44h4i1xjV06YxraAfH8eUBWUbk/xmir6WlVP/n1bQg3PUWBW2Hv/lcwjOa8UzZ656kzsT4lkJHs4rMXWC2Pf6sBJD1Isb1oL2WDqENHwcwn84Lm7v7NlkE7znHDSAa4eAX/sdbSyZE=,iv:liIdq4spg84LNX7szpn7ZwLfViMRd1c1EY7r/rv3EfM=,tag:cac1vvKGJW5UcYEBUV2c/A==,type:str]
+sops:
+    kms: []
+    gcp_kms:
+        - resource_id: projects/my-deployments-2/locations/global/keyRings/deployments-production/cryptoKeys/ksops-encryption-key-production
+          created_at: "2024-04-29T03:35:43Z"
+          enc: CiQAwNc9KRgR8E3fSy5I0hOfidHcvx6UQwQ/Yr72mcWYMDrr2FgSSQCt4CYPvs/dPXGCnpWDQRLYehnfBNBwWc27E+1segtQntcb2HFq85TSQ9ZzA2ROStDQ6fRi9d/RtM1cb4CDrdZRQ4YO48g+Qfw=
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2024-04-29T03:35:44Z"
+    mac: ENC[AES256_GCM,data:gPzdVJEbOzQlBJjaphegRroVKG9/0r2wydjxQR3JbapQu8G3B3maN+5wgTA4cNuYBZFSw4vqdi4rno7Yzwg5+WKTA3EGFNMY2Apxmrn/stdspgYeVAMjhMDReITZ+VRnXDzHycbttUwBdYE/RcBPLd6rmaVg+aXuaeKvM/BrII0=,iv:CIp9K5DwWbDY1CVzlwNpgoWsdz4pd+7DRNBQyGLzsss=,tag:M8yiSwNR2f8e4C+AelpONw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData|global|apiKey|superset)$
+    version: 3.7.3

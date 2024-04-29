@@ -1,19 +1,47 @@
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: argocd-backend-config
+spec:
+  healthCheck:
+    checkIntervalSec: 30
+    timeoutSec: 5
+    healthyThreshold: 1
+    unhealthyThreshold: 2
+    type: HTTP
+    requestPath: /healthz
+    port: 8080
+---
+apiVersion: networking.gke.io/v1beta1
+kind: FrontendConfig
+metadata:
+  name: argocd-frontend-config
+spec:
+  redirectToHttps:
+    enabled: true
+  sslPolicy: ssl-policy
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: argocd
   annotations:
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    networking.gke.io/v1beta1.FrontendConfig: argocd-frontend-config
+    external-dns.alpha.kubernetes.io/hostname: argocd.lucassilvano.com.br
+    acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
-  ingressClassName: nginx
+  tls:
+    - secretName: argocd-tls
+      hosts:
+        - argocd.lucassilvano.com.br
   rules:
-  - host: "change-me"
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/" # "*" is needed. Without this, the UI Javascript and CSS will not load properly
-        backend:
-          service:
-            name: argocd-server
-            port:
-              number: 80
+    - host: argocd.lucassilvano.com.br
+      http:
+        paths:
+        - pathType: ImplementationSpecific
+          path: "/*"   # "*" is needed. Without this, the UI Javascript and CSS will not load properly
+          backend:
+            service:
+              name: argocd-server
+              port:
+                number: 80

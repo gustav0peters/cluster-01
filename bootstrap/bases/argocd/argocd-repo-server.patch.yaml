@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-repo-server
+spec:
+  template:
+    spec:
+      volumes:
+        - name: gcp-creds
+          secret:
+            secretName: argocd-sa-creds
+            items:
+              - key: cred
+                path: application_default_credentials.json
+      containers:
+        - name: argocd-repo-server
+          env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /etc/google/application_default_credentials.json
+            - name: HELM_EXPERIMENTAL_OCI
+              value: "1"
+          volumeMounts:
+            - name: gcp-creds
+              mountPath: /etc/google/

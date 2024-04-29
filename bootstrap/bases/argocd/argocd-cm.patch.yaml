@@ -4,6 +4,16 @@ metadata:
   name: argocd-cm
 data:
   # For KSOPs versions < v2.5.0, use the old kustomize flag style
-  kustomize.buildOptions: "--enable-alpha-plugins --enable-exec"
+  # kustomize.buildOptions: "--enable_alpha_plugins"
+  kustomize.buildOptions: "--enable-alpha-plugins"
   # Disable Admin user
-  # admin.enabled: "false"
+  admin.enabled: "true"
+  exec.enabled: "true"
+
+  # Accounts
+  #accounts.joaomoura: apiKey, login
+  #accounts.gustavo: apiKey, login
+  #accounts.federico: apiKey, login
+  #accounts.david: apiKey, login
+  #accounts.swords: apiKey, login
+  #accounts.cortharlow: apiKey, login

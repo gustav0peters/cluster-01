@@ -1,0 +1,33 @@
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMServiceAccount
+metadata:
+  name: argocd-repo-server
+spec:
+  displayName: argocd-repo-server
+---
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicy
+metadata:
+  name: argocd-repo-server-workload-identity-bind
+spec:
+  resourceRef:
+    apiVersion: iam.cnrm.cloud.google.com/v1beta1
+    kind: IAMServiceAccount
+    name: argocd-repo-server
+  bindings:
+    - role: roles/iam.workloadIdentityUser
+      members:
+        - "change me"
+---
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPartialPolicy
+metadata:
+  name: argocd-repo-server-project-role-binds
+spec:
+  resourceRef:
+    kind: Project
+    external: "change me"
+  bindings:
+    - role: roles/cloudkms.cryptoKeyDecrypter
+      members:
+        - member: "change-me" # serviceAccount:{{ $.Values.saName }}@{{ $.Values.project }}.iam.gserviceaccount.com

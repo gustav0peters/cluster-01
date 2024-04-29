@@ -3,7 +3,8 @@ kind: ConfigMap
 metadata:
   name: argocd-rbac-cm
 data:
-  policy.default: role:admin
+  policy.default: ""
+  scopes: '[groups, email]'
   policy.csv: |
     # Admin role
     p, role:org-admin, applications, *, */*, allow
@@ -14,6 +15,7 @@ data:
     p, role:org-admin, repositories, delete, *, allow
     p, role:org-admin, logs, get, *, allow
     p, role:org-admin, exec, create, */*, allow
+
     # Developer Role
     p, role:dev, applications, *, services/*, allow
     p, role:dev, exec, create, services/*, allow
@@ -21,5 +23,8 @@ data:
     p, role:dev, projects, get, services, allow
     p, role:dev, projects, update, services, allow
     p, role:dev, projects, sync, services, allow
+
     # Role assignments
-#    g, joaomoura, role:org-admin
+    g, devops@findmine.com, role:org-admin
+    g, develop@findmine.com, role:dev
+ 

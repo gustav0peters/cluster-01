@@ -1,0 +1,4 @@
+creation_rules:
+  - path_regex: .*/prd/.*
+    encrypted_regex: "^(data|stringData|global|apiKey|superset)$"
+    gcp_kms: projects/my-deployments-2/locations/global/keyRings/deployments-production/cryptoKeys/ksops-encryption-key-production

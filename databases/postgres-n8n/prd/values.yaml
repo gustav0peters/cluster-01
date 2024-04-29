@@ -1,0 +1,13 @@
+postgresql:
+  clusterDomain: cluster.local
+  auth:
+    enablePostgresUser: true
+    postgresPassword: "n8n"
+    username: "n8n"
+    password: "n8n"
+    database: "n8n"
+    secretKeys:
+      adminPasswordKey: n8n
+      userPasswordKey: n8n
+    usePasswordFiles: false
+  

@@ -48,7 +48,7 @@ patches:
     patch: |-
       - op: replace
         path: /spec/bindings/0/members/0
-        value: serviceAccount:deployments.svc.id.goog[argocd/argocd-repo-server]
+        value: serviceAccount:my-deployments-2.svc.id.goog[argocd/argocd-repo-server]
   - target:
       kind: IAMPartialPolicy
       name: argocd-repo-server-project-role-binds

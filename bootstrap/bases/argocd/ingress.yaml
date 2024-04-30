@@ -28,6 +28,7 @@ metadata:
   annotations:
     networking.gke.io/v1beta1.FrontendConfig: argocd-frontend-config
     external-dns.alpha.kubernetes.io/hostname: argocd.digitalview.com.br
+    kubernetes.io/ingress.class: gce
     cert-manager.io/cluster-issuer: letsencrypt-production
     acme.cert-manager.io/http01-edit-in-place: "true"
 spec:

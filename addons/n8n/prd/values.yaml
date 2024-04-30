@@ -19,7 +19,6 @@ n8n:
       - host: n8n.digitalview.com.br
         paths:
           - path: /
-            pathType: Prefix
     tls:
       - secretName: n8n-tls
         hosts:

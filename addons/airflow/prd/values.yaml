@@ -12,6 +12,17 @@ airflow:
     pod_template_file: "{{ include 'airflow_pod_template_file' . }}/pod_template_file.yaml"
     worker_container_repository: "{{ .Values.images.airflow.repository | default .Values.defaultAirflowRepository }}"
     worker_container_tag: "{{ .Values.images.airflow.tag | default .Values.defaultAirflowTag }}"
+  
+  createUserJob:
+    useHelmHooks: false
+    applyCustomEnv: false
+  migrateDatabaseJob:
+    useHelmHooks: false
+    applyCustomEnv: false
+  
+  migrateDatabaseJob:
+    jobAnnotations:
+        "argocd.argoproj.io/hook": Sync
 
   # Scaling Configurations
   keda:

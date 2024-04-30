@@ -16,3 +16,11 @@ n8n:
     minReplicas: 1
     maxReplicas: 3
     targetCPUUtilizationPercentage: 90
+  scaling:
+    enabled: true
+    worker:
+      count: 2
+      concurrency: 2
+    webhook:
+      enabled: true
+      count: 1

@@ -3,7 +3,7 @@ n8n:
     database:
       type: postgresdb
       postgresdb:
-        host: postgres-n8n-postgresql.addons.svc.cluster.local:5432 # Update this with your PostgreSQL host
+        host: postgres-n8n-postgresql.databases.svc.cluster.local # Update this with your PostgreSQL host
         port: 5432  # Update this with your PostgreSQL port
         database: "n8n"  # Update this with your PostgreSQL database name
         user: "n8n"  # Update this with your PostgreSQL user

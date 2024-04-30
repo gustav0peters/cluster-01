@@ -11,3 +11,8 @@ n8n:
     database:
       postgresdb:
         password: "n8n"  # Update this with your PostgreSQL password
+  autoscaling:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 3
+    targetCPUUtilizationPercentage: 90

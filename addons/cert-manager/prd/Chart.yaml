@@ -1,0 +1,13 @@
+apiVersion: v2
+name: cert-manager
+version: 0.1.0
+dependencies:
+  - name: cert-manager
+    version: 1.9.1
+    repository: https://charts.jetstack.io
+  - name: common
+    version: 0.1.0
+    repository: file://../common
+  - name: google-iam
+    version: 1.0.0
+    repository: "oci://ghcr.io/findmine/helm-charts"

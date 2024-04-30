@@ -1,0 +1,41 @@
+cert-manager:
+  installCRDs: true
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: workload-type
+            operator: In
+            values:
+            - standard
+  webhook:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: workload-type
+              operator: In
+              values:
+              - standard
+  cainjector:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: workload-type
+              operator: In
+              values:
+              - standard
+common:
+  issuer:
+    email: gustacpeters@gmail.com
+google-iam:
+  saName: cert-dns
+  namespace: addons
+  saDisplayName: cert-dns
+  ksa:
+    create: false
+    name: cert-manager

@@ -1,0 +1,16 @@
+cert-manager:
+  serviceAccount:
+    annotations:
+      iam.gke.io/gcp-service-account: cert-dns@my-deployments-2.iam.gserviceaccount.com
+google-iam:
+  project: my-deployments-2
+  projects: 
+    - id: my-deployments-2
+      roles:
+        - roles/dns.admin
+common:
+  issuer:
+    solvers:
+     - dns01:
+         cloudDNS:
+           project: my-deployments-2

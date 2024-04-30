@@ -1,0 +1,9 @@
+dependencies:
+- name: external-dns
+  repository: https://charts.bitnami.com/bitnami
+  version: 6.7.5
+- name: google-iam
+  repository: oci://ghcr.io/findmine/helm-charts
+  version: 0.1.3
+digest: sha256:41ab3696aedcad4ccb35f5ae4bdbf487d841bb6239154e5cf8f4b0afe2796dc8
+generated: "2024-04-29T23:11:53.119521-03:00"

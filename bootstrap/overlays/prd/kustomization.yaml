@@ -35,13 +35,13 @@ patches:
     patch: |-
       - op: replace
         path: /metadata/annotations/external-dns.alpha.kubernetes.io~1hostname
-        value: argocd.lucassilvano.com.br
+        value: argocd.digitalview.com.br
       - op: replace
         path: /spec/rules/0/host
-        value: argocd.lucassilvano.com.br
+        value: argocd.digitalview.com.br
       - op: replace
         path: /spec/tls/0/hosts/0
-        value: argocd.lucassilvano.com.br
+        value: argocd.digitalview.com.br
   - target:
       kind: IAMPolicy
       name: argocd-repo-server-workload-identity-bind
@@ -79,7 +79,7 @@ patches:
     patch: |-
       - op: replace
         path: /data/url
-        value: https://argocd.lucassilvano.com.br
+        value: https://argocd.digitalview.com.br
 
 generators:
   - secrets-generator.yaml

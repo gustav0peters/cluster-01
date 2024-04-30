@@ -27,15 +27,15 @@ metadata:
   name: argocd
   annotations:
     networking.gke.io/v1beta1.FrontendConfig: argocd-frontend-config
-    external-dns.alpha.kubernetes.io/hostname: argocd.lucassilvano.com.br
+    external-dns.alpha.kubernetes.io/hostname: argocd.digitalview.com.br
     acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   tls:
     - secretName: argocd-tls
       hosts:
-        - argocd.lucassilvano.com.br
+        - argocd.digitalview.com.br
   rules:
-    - host: argocd.lucassilvano.com.br
+    - host: argocd.digitalview.com.br
       http:
         paths:
         - pathType: ImplementationSpecific

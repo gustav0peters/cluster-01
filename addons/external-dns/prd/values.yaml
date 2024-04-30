@@ -1,0 +1,23 @@
+externalDNS:
+  google:
+    project: my-deployments-2
+
+  domainFilters:
+    - digitalview.com.br
+
+  serviceAccount:
+    annotations:
+      iam.gke.io/gcp-service-account: external-dns@my-deployments-2.iam.gserviceaccount.com
+      
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: workload-type
+            operator: In
+            values:
+            - standard
+
+google-iam:
+  project: my-deployments-2

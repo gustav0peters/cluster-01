@@ -1,0 +1,12 @@
+dependencies:
+- name: cert-manager
+  repository: https://charts.jetstack.io
+  version: v1.9.1
+- name: common
+  repository: file://../common
+  version: 0.1.0
+- name: google-iam
+  repository: oci://ghcr.io/findmine/helm-charts
+  version: 1.0.0
+digest: sha256:3e2999c1a05901a8f90f477beaaac5fd3ade74b675035e7ba27b266b780522f9
+generated: "2024-04-29T23:16:33.090681-03:00"

@@ -1,0 +1,19 @@
+externalDNS:
+  fullnameOverride: external-dns
+  provider: google
+  sources:
+    - ingress
+  policy: upsert-only
+
+  serviceAccount:
+    name: external-dns
+
+google-iam:
+  saName: external-dns
+  namespace: addons
+  saDisplayName: external-dns
+  ksa:
+    create: false
+    name: external-dns
+  roles:
+    - roles/dns.admin

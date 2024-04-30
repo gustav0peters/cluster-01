@@ -62,19 +62,19 @@ airflow:
   # Ingress Configuration for Airflow Web Service
   ingress:
     web:
-      enabled: True
+      enabled: true
       annotations:
         external-dns.alpha.kubernetes.io/hostname: "airflow.digitalview.com.br"
         kubernetes.io/ingress.class: "gce"
         cert-manager.io/cluster-issuer: "letsencrypt-production"
       hosts:
-        - host: "airflow.digitalview.com.br"
+        - name: "airflow.digitalview.com.br"
           paths:
             - path: "/"
               pathType: Prefix
       tls:
-        - hosts:
-            - "airflow.digitalview.com.br"
-          secretName: "airflow-tls"  # TLS secret managed by cert-manager
+        secretName: "airflow-tls"
+        hosts:
+          - "airflow.digitalview.com.br"
 
 

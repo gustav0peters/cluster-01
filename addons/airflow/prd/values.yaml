@@ -13,9 +13,6 @@ airflow:
     worker_container_repository: "{{ .Values.images.airflow.repository | default .Values.defaultAirflowRepository }}"
     worker_container_tag: "{{ .Values.images.airflow.tag | default .Values.defaultAirflowTag }}"
   
-  createUserJob:
-    useHelmHooks: false
-    applyCustomEnv: false
   migrateDatabaseJob:
     useHelmHooks: false
     applyCustomEnv: false

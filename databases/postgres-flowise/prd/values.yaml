@@ -1,0 +1,13 @@
+postgresql:
+  clusterDomain: cluster.local
+  auth:
+    enablePostgresUser: true
+    postgresPassword: "flowise"
+    username: "flowise"
+    password: "flowise"
+    database: "flowise"
+    secretKeys:
+      adminPasswordKey: flowise
+      userPasswordKey: flowise
+    usePasswordFiles: false
+  

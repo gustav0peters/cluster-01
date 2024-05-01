@@ -1,0 +1,8 @@
+apiVersion: v2
+name: flowise
+version: 0.1.0
+dependencies:
+  - name: flowise
+    alias: flowise
+    version: 3.2.0
+    repository: https://cowboysysop.github.io/charts/

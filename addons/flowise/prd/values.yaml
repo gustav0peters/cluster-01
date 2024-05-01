@@ -1,0 +1,28 @@
+flowise:
+  ## Enable external PostgreSQL
+  externalPostgresql:
+    enabled: true
+    host: postgres-n8n-postgresql.databases.svc.cluster.local
+    port: 5432  # Default PostgreSQL port, change if different
+    username: flowise
+    password: flowise
+    database: flowise
+  ## Enable Ingress
+  ingress:
+    enabled: true
+    annotations:
+      external-dns.alpha.kubernetes.io/hostname: n8n.digitalview.com.br
+      kubernetes.io/ingress.class: gce
+      cert-manager.io/cluster-issuer: letsencrypt-production
+    pathType: Prefix
+    hosts:
+      - host: flowise.digitalview.com.br  # Change to your actual domain
+        paths:
+          - /
+    tls: 
+      - secretName: flowise-tls
+        hosts:
+          - flowise.digitalview.com.br
+  config:
+    username: "admin"
+    password: "admin"

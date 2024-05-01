@@ -1,0 +1,6 @@
+dependencies:
+- name: flowise
+  repository: https://cowboysysop.github.io/charts/
+  version: 3.2.0
+digest: sha256:1866e40fe0adb199e22fe1d9b58d9a49ac51b3db5bdfcff5f1db346666d532e6
+generated: "2024-04-30T22:12:29.343161-03:00"

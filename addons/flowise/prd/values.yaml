@@ -2,7 +2,7 @@ flowise:
   ## Enable external PostgreSQL
   externalPostgresql:
     enabled: true
-    host: postgres-n8n-postgresql.databases.svc.cluster.local
+    host: postgres-flowise-postgresql-hl.databases.svc.cluster.local
     port: 5432  # Default PostgreSQL port, change if different
     username: flowise
     password: flowise
